@@ -159,7 +159,7 @@ token number()
 
 token_type check_keyword(int length, const char *rest, token_type type)
 {
-	if ((lexer_current - start) == 5 && memcmp(start + 1, rest, length - 1) == 0) {
+	if ((lexer_current - start) == length && memcmp(start + 1, rest, length - 1) == 0) {
 		return type;
 	}
 	fprintf(stderr, "jay: Unknown keyword \"%.*s\" at line %d\n", length, start, line);
